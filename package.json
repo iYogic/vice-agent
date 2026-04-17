@@ -1,8 +1,8 @@
 {
   "name": "vice-sider",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Agent 智能侧边栏",
+  "author": "yogic",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -12,7 +12,10 @@
     "start:prod": "node dist/main",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "cspell": "cspell --no-must-find-files src/**/*.{ts,js}",
+    "unimported": "unimported",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
@@ -22,6 +25,8 @@
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "17.3.0",
+    "@commitlint/config-conventional": "17.3.0",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.18.0",
     "@nestjs/cli": "^11.0.0",
@@ -31,11 +36,17 @@
     "@types/jest": "^30.0.0",
     "@types/node": "^24.0.0",
     "@types/supertest": "^7.0.0",
+    "cspell": "6.15.0",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.2",
+    "eslint-plugin-rxjs": "5.0.2",
+    "eslint-plugin-sonarjs": "0.16.0",
     "globals": "^17.0.0",
+    "husky": "8.0.2",
     "jest": "^30.0.0",
+    "lint-staged": "13.0.4",
+    "nestjs-lint-tools": "^0.0.6",
     "prettier": "^3.4.2",
     "source-map-support": "^0.5.21",
     "supertest": "^7.0.0",
@@ -44,7 +55,8 @@
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.20.0"
+    "typescript-eslint": "^8.20.0",
+    "unimported": "1.23.0"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -62,5 +74,8 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "engines": {
+    "node": ">= 18"
   }
 }

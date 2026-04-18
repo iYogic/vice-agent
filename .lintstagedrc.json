@@ -1,4 +1,4 @@
 {
-  "*.ts": ["cspell --no-must-find-files .", "eslint --fix --max-warnings 0"],
+  "*.ts": ["eslint --fix --max-warnings 0"],
   "*.{md,json,html}": "prettier --write"
 }

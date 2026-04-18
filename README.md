@@ -2,11 +2,23 @@
 
 Agent 智能侧边栏
 
-## Project dis
+## Project tel
+
+> nest 11
 
 > node >= 20.20
 
 > pnpm
+
+> eslint
+
+> prettier
+
+> husky
+
+> lint-staged
+
+> commitlint
 
 ## Project Step
 

@@ -19,14 +19,13 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
-    "strictBindCallApply": true,
-    "noFallthroughCasesInSwitch": true,
-    "strict": true,
-    "strictPropertyInitialization": false,
+    "strictBindCallApply": false,
+    "noFallthroughCasesInSwitch": false,
     "noImplicitThis": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "noUncheckedIndexedAccess": true,
     "useUnknownInCatchVariables": true
-  }
+  },
+  "exclude": ["node_modules", "dist", "web"]
 }

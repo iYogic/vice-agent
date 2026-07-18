@@ -1,2 +1,0 @@
-extends: ['plugin:rxjs/recommended','plugin:sonarjs/recommended'],
-plugins: ['sonarjs']

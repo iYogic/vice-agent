@@ -1,0 +1,11 @@
+{
+  "ignoreUnresolved": [],
+  "ignoreUnused": ["@nestjs/typeorm"],
+  "ignoreUnimported": [
+    "src/chat/chat.controller.ts",
+    "src/chat/chat.module.ts",
+    "src/chat/chat.service.ts",
+    "src/entities/conversations.entity.ts",
+    "src/entities/message.entity.ts"
+  ]
+}

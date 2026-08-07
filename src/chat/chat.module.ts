@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common'
 // ----- 数据库相关
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { Conversation } from './../entities/conversation.entity'
+import { Conversation } from './../entities/conversations.entity'
 import { Message } from './../entities/message.entity'
 // ----- 能力聚合
 import { AgentModule } from './../agent/agent.module'

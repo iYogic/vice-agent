@@ -5,3 +5,4 @@
 - [ ] 日志收集 如何处理的，日志传到哪里 （输出笔记）
 - [ ] Docker-Compose.yml 管理服务
 - [ ] Dockerfile 后端nest 和 前端html 的打包镜像处理【多阶段打包】
+- [ ] 编排

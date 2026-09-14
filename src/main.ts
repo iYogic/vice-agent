@@ -13,15 +13,14 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule)
 
   const configService = app.get(ConfigService)
-  const port = (configService.get('PORT') as number) ?? 3000
+  const port = (configService.get('port') as number) ?? 3000
 
   // TODO: 全局异常过滤器
   // app.useGlobalFilters(new GlobalExceptionFilter())
 
   // 全局CORS配置
-  const corsOrigin = configService.get('CORS.ORIGIN') ?? '*'
   app.enableCors({
-    origin: corsOrigin,
+    origin: configService.get('cors.origin') ?? '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     allowedHeaders: 'Content-Type,Authorization',

@@ -26,7 +26,10 @@
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "noUncheckedIndexedAccess": true,
-    "useUnknownInCatchVariables": true
+    "useUnknownInCatchVariables": true,
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "exclude": ["node_modules", "dist", "web"]
 }

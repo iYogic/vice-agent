@@ -2,13 +2,13 @@ import { Controller, Post, Get, Put, Delete, Body, Param, UseGuards } from '@nes
 import { z } from 'zod'
 import { WorkflowService } from './workflow.service'
 import { JwtAuthGuard, TenantGuard } from './../auth/guards'
-import { TenantId } from './../common/decorators/tenant.decorator'
+import { TenantId } from '../common/decorators/tenant.decorator'
 
 const WorkflowNodeSchema = z.object({
   id: z.string(),
   type: z.enum(['agent', 'tool', 'condition', 'start', 'end']),
   name: z.string(),
-  config: z.config(),
+  config: z.record(z.string(), z.any()),
 })
 
 const WorkflowEdgeSchema = z.object({
@@ -52,7 +52,7 @@ export class WorkflowController {
   @Put(`:id`)
   async update(@Param('id') id: string, @Body() body: any, @TenantId() tenantId: string) {
     const dto = UpdateWorkflowSchema.parse(body)
-    return await this.workflowService.Update(id, tenantId, dto)
+    return await this.workflowService.update(id, tenantId, dto)
   }
 
   @Delete(`:id`)

@@ -80,7 +80,7 @@ export class SupervisorFactory {
             messages: [{ role: 'user', content: input.query }],
           })
 
-          const lastMessage = result.messages[result.messages.length - 1]
+          const lastMessage = result.messages[result.messages.length - 1]! || {}
           return typeof lastMessage.content === 'string' ? lastMessage.content : JSON.stringify(lastMessage.content)
         },
         {

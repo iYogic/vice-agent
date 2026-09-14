@@ -1,3 +1,5 @@
 {
-  "js/ts.tsdk.path": "node_modules/typescript/lib"
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "todo-tree.ripgrep.ripgrep": "/opt/homebrew/bin/rg",
+  "todo-tree.regex.regex": "(//|/\\*|\\*\\s*)\\s*(TODO|FIXME|HACK|BUG|NOTE|INFO|XXX|WARNING|OPTIMIZE|KEYWORD|TEST|DEPRECATED|IDEA|QUESTION|PERF)"
 }

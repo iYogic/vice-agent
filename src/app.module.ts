@@ -1,11 +1,17 @@
 import { Module } from '@nestjs/common'
 import { join } from 'path'
+import { ServeStaticModule } from '@nestjs/serve-static'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import configuration from './common/config/configuration'
-import { ServeStaticModule } from '@nestjs/serve-static'
 import { RedisModule } from './redis/redis.module'
+import { AuthModule } from './auth/auth.module'
 import { LLMModule } from './llm/llm.module'
+import { ChatModule } from './chat/chat.module'
+import { AgentModule } from './agent/agent.module'
+import { RagModule } from './rag/rag.module'
+import { WorkflowModule } from './workflow/workflow.module'
+import { ToolsModule } from './tools/tool.module'
 
 /**
  * app.module.ts 是 NestJS 应用的根模块，负责引导整个应用
@@ -61,28 +67,20 @@ import { LLMModule } from './llm/llm.module'
     }),
     // --- 数据库模块 【redis】
     RedisModule,
+    // --- 权限模块 【Auth】
+    AuthModule,
     // --- 大模型模块 【LLM】
     LLMModule,
+    // --- tools模块 【Tools】
+    ToolsModule,
+    // --- chat模块 【Chat】
+    ChatModule,
     // --- agent模块 【Agent】
-    ConfigModule.forRoot({
-      isGlobal: true,
-      envFilePath: '.env',
-    }),
-    // --- Tool模块
-    ConfigModule.forRoot({
-      isGlobal: true,
-      envFilePath: '.env',
-    }),
-    // --- Rag模块
-    ConfigModule.forRoot({
-      isGlobal: true,
-      envFilePath: '.env',
-    }),
-    // --- Chat模块【流式~~~】
-    ConfigModule.forRoot({
-      isGlobal: true,
-      envFilePath: '.env',
-    }),
+    AgentModule,
+    // --- rag模块 【Rag】
+    RagModule,
+    // --- workflow模块 【Workflow】
+    WorkflowModule,
   ],
 })
 export class AppModule {}
